@@ -15,6 +15,7 @@
       ]
     ],
     "name": "CookbookAI",
-    "slug": "CookbookAI"
+    "slug": "CookbookAI",
+    "newArchEnabled": true
   }
 }
