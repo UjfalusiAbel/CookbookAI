@@ -22,12 +22,14 @@ export const RecipeProvider: React.FC<{ children: React.ReactNode }> = ({ childr
         const exists = favorites.find((r) => r.id === recipe.id);
         if (!exists) {
             const updated = [...favorites, recipe];
+            setFavorites(updated);
             await saveFavorites(updated);
         }
     }
 
     const removeFavorite = async (id: string) => {
         const updated = favorites.filter((r) => r.id !== id);
+        setFavorites(updated);
         await saveFavorites(updated);
     }
 

@@ -25,8 +25,14 @@ const HomeScreen = () => {
         setIsLoading(false);
     };
 
+    const clearSearch = () => {
+        setRecipeSearch("");
+        setAiResults(null);
+    }
+
     const restartSearch = async () => {
-        setRecipeSearch(recipeSearch+" but different than last ones");
+        setIsLoading(true);
+        setRecipeSearch(recipeSearch);
         setAiResults(null);
         try {
             const recipes = await getAiRecipes(recipeSearch);
@@ -39,7 +45,7 @@ const HomeScreen = () => {
 
     return (
         <View className="flex-1 bg-[#f8f8f8]">
-            <Searchbar recipeSearch={recipeSearch} setRecipeSearch={setRecipeSearch} onSearch={handleSearch} />
+            <Searchbar recipeSearch={recipeSearch} setRecipeSearch={setRecipeSearch} onSearch={handleSearch} showClear={!!aiResults} onClear={clearSearch} />
 
             {isLoading ? (
                 <View className="flex-1 justify-center items-center mt-10">
@@ -50,7 +56,7 @@ const HomeScreen = () => {
                 <View>
                     <RecipeList header="Suggested recipes" data={aiResults} />
                     <Pressable className="bg-purple-700 px-4 py-3 rounded-xl mt-6 items-center" onPress={restartSearch}>
-                        <Text className="text-white font-semibold">I don’t like these</Text>
+                        <Text className="text-white font-semibold">I don't like these</Text>
                     </Pressable>
                 </View>
             ) : (

@@ -17,11 +17,11 @@ const RecipeItem: React.FC<RecipeItemProps> = ({ item }) => {
       setIsFavorite(true);
     }
     else {
-      await handleRemove(item.id);
+      handleRemove(item.id);
     }
   }
 
-  const handleRemove = async (id: string) => {
+  const handleRemove = (id: string) => {
     const buttons: AlertButton[] = [
       {
         text: "Cancel",
@@ -31,8 +31,8 @@ const RecipeItem: React.FC<RecipeItemProps> = ({ item }) => {
         text: "Remove",
         style: "destructive",
         onPress: () => {
-          setIsFavorite(false);
           removeFavorite(id);
+          setIsFavorite(false);
         },
       },
     ];
