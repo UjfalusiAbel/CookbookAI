@@ -1,6 +1,7 @@
-interface SearchbarProps {
-    recipeSearch: string,
-    setRecipeSearch: React.Dispatch<React.SetStateAction<string>>
+export interface SearchbarProps {
+    recipeSearch: string;
+    setRecipeSearch: (text: string) => void;
+    onSearch: () => void;
 }
 
 export default SearchbarProps;

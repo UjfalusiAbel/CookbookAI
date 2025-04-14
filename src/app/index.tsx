@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import { View, Text, FlatList, Alert, AlertButton } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import RecipeItem from "@/app/components/RecipeItem";
-import { mockFavorites } from "@/constants";
-import Searchbar from "./components/Searchbar";
-import Favorites from "./components/Favorites";
 import HomeScreen from "./screens/HomeScreen";
 
 
@@ -13,7 +9,7 @@ export default function Page() {
 
   return (
     <View className="flex-1 bg-[#f8f8f8]" style={{ paddingTop: top }}>
-      <HomeScreen/>
+      <HomeScreen />
     </View>
   );
 }
