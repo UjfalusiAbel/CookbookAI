@@ -28,7 +28,7 @@ An AI-powered recipe app built with **React Native**, **Expo Router**, and **Nat
 ### 1. Clone this repo
 
 ```sh
-git clone https://github.com/your-username/cookbook-ai.git
+git clone https://github.com/UjfalusiAbel/CookbookAI.git
 cd cookbook-ai
 ```
 ### 2. Install dependencies
