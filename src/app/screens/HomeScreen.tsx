@@ -45,7 +45,7 @@ const HomeScreen = () => {
 
     return (
         <View className="flex-1 bg-[#f8f8f8]">
-            <Searchbar recipeSearch={recipeSearch} setRecipeSearch={setRecipeSearch} onSearch={handleSearch} showClear={!!aiResults} onClear={clearSearch} />
+            <Searchbar recipeSearch={recipeSearch} setRecipeSearch={setRecipeSearch} onSearch={handleSearch} showClear={!!aiResults || !!isLoading} onClear={clearSearch} />
 
             {isLoading ? (
                 <View className="flex-1 justify-center items-center mt-10">
